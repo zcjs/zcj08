@@ -4,7 +4,7 @@ public class Film {
 private int film_id;
 private String title;
 private String description;
-private String language;
+private int language;
 public int getFilm_id() {
 	return film_id;
 }
@@ -23,13 +23,13 @@ public String getDescription() {
 public void setDescription(String description) {
 	this.description = description;
 }
-public String getLanguage() {
+public int getLanguage() {
 	return language;
 }
-public void setLanguage(String language) {
+public void setLanguage(int language) {
 	this.language = language;
 }
-public Film(int film_id, String title, String description, String language) {
+public Film(int film_id, String title, String description, int language) {
 	super();
 	this.film_id = film_id;
 	this.title = title;
@@ -38,7 +38,6 @@ public Film(int film_id, String title, String description, String language) {
 }
 public Film() {
 	super();
-	// TODO Auto-generated constructor stub
 }
 
 }

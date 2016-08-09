@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>登录成功页面</title>
+<title>Insert title here</title>
 </head>
-<form action="FilmServlet2" method="post">
-<input type="submit" value="获取film信息">
 <body>
 
+增加成功！<br>
+<a href="/JspExam/FilmServlet1">返回film列表</a>
 </body>
-</form>
+
 </html>

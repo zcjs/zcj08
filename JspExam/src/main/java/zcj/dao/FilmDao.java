@@ -1,14 +1,12 @@
 package zcj.dao;
 
+import java.sql.SQLException;
 import java.util.List;
-
 import zcj.enity.Film;
 
 public interface FilmDao {
-	
-    int insert(Film film);
-   
-    int delete(int id);
+	void insert(Film film) throws SQLException;
+	void delete(int film_id) throws SQLException;
+	List<Film> getAll() throws SQLException;
     
-    List<Film> getAll();
 }

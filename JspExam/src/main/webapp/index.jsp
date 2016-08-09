@@ -4,6 +4,6 @@
 <body>
 <h2>JspExam</h2>
 <a href="Login.jsp">登录链接</a>
-<a href="film.jsp">film显示链接</a>
+<a href="Login.jsp">film显示链接</a>
 </body>
 </html>
