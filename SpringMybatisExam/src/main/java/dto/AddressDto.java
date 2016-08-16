@@ -61,12 +61,7 @@ public class AddressDto {
 	public void setLast_update(Date last_update) {
 		this.last_update = last_update;
 	}
-	@Override
-	public String toString() {
-		return "AddressDto [address_id=" + address_id + ", address=" + address + ", address2=" + address2
-				+ ", district=" + district + ", city_id=" + city_id + ", postal_code=" + postal_code + ", phone="
-				+ phone + ", last_update=" + last_update + "]";
-	}
+	
 	
 
 }

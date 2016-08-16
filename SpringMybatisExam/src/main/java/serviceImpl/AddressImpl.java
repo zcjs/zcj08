@@ -7,8 +7,8 @@ import service.AddressService;
 
 public class AddressImpl extends SqlSessionDaoSupport implements AddressService{
 
-	public AddressDto getAddress(int id) {
-		return this.getSqlSession().selectOne("getAddress",id);
+	public AddressDto getAddress(int i) {
+		return this.getSqlSession().selectOne("getAddress",i);
 	}
 
 }

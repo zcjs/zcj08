@@ -3,6 +3,6 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
 <mapper namespace="dto.AddressDto">
 	<select id="getAddress" parameterType="int" resultType="dto.AddressDto">
-		select * from address where id = #{id}
+		select address from address where address_id = #{address_id}
 	</select>
 </mapper>

@@ -3,9 +3,11 @@ package test;
 import java.util.Date;
 import java.util.Scanner;
 
+import org.omg.CORBA.PUBLIC_MEMBER;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import dto.AddressDto;
 import dto.CustomerDto;
 import serviceImpl.AddressImpl;
 import serviceImpl.CustomerImpl;
@@ -27,13 +29,17 @@ public class CustomerTest {
 		
 		
 	}  
-/*	public static AddressDto getAddress_a(int i){  
-		AddressDto u = addressService.getAddress(i);  
+	public static AddressDto getAddress_a(int i){  
+		AddressDto u = addressImpl.getAddress(i);  
 		if(u != null){  
 			System.out.println(u);  
 		}
 		return u;  
-	}  */
+	}  
+	public static void deleteCu(int i)
+	{
+		 customerImpl.deleteCustomer(i);
+	}
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
         
@@ -75,6 +81,7 @@ public class CustomerTest {
 		try {
 			setUpBeforeClass();
 			testInsert();
+			deleteuser();
 			//outUser();
 			
 		} catch (Exception e) {
@@ -98,6 +105,7 @@ public class CustomerTest {
          	u.setFiest_name(s);  
          	break;
          }
+         	
          }
          
          while(true){
@@ -131,8 +139,9 @@ public class CustomerTest {
 	            System.out.println("请输入address_id");
 	            String s3 = sc3.nextLine();
 	            int i = Integer.parseInt(s3);
-	            
-	            if(i>630){
+	            AddressDto u1 = getAddress_a(i);
+
+	            if(u1 == null){
 	            	System.out.println("请输入存在的address_id");
 	            }else{
 	            	u.setAddress_id(i);
@@ -143,9 +152,22 @@ public class CustomerTest {
 	            customerImpl.addCustomer(u);  
 	        System.out.println("保存成功！");  
 	        System.out.println("已保存的数据如下：");
-	        System.out.println();
-	        System.out.println();
-	    }  
+	        System.out.println("ID:"+ u.getStore_id());
+	        System.out.println("FirstName:" + u.getFiest_name());
+	        System.out.println("LastName:" + u.getLast_name());
+	        System.out.println("Email:" + u.getEmail());
+	        AddressDto u1 = getAddress_a(u.getAddress_id());
+	        System.out.println("Address:"+ u1.getAddress());
+	    }
+	 		public static void deleteuser(){
+	 			
+	 			Scanner  sc = new Scanner(System.in);
+	 			System.out.println("请输入customer_id");
+	 			String s  = sc.nextLine();
+	 			int a = Integer.parseInt(s);
+	 			deleteCu(a);
+	 			System.out.println("删除成功");
+	 		}
 	
 	 
          }

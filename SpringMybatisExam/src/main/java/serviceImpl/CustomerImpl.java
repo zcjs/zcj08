@@ -11,5 +11,9 @@ public class CustomerImpl extends SqlSessionDaoSupport implements CustomerServic
 		this.getSqlSession().selectOne("addCustomer",customer);
 	}
 
+	public void deleteCustomer(int i) {
+		this.getSqlSession().selectOne("deleteCustomer",i);
+	}
+
 	
 }
